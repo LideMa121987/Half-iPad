@@ -7,32 +7,32 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>3EADD7DC-CB93-4601-A741-D39605572506</string>
 	<key>IDESourceControlProjectName</key>
-	<string>Half</string>
+	<string>project</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>158C46CB-21A1-436F-BE62-26EF0C4D0032</key>
+		<key>08753C468C03ACB3EC831166470D22D0E2C1F832</key>
 		<string>https://github.com/LideMa121987/Half-iPad.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>Half/Half.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>158C46CB-21A1-436F-BE62-26EF0C4D0032</key>
+		<key>08753C468C03ACB3EC831166470D22D0E2C1F832</key>
 		<string>../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/LideMa121987/Half-iPad.git</string>
 	<key>IDESourceControlProjectVersion</key>
-	<integer>110</integer>
+	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>158C46CB-21A1-436F-BE62-26EF0C4D0032</string>
+	<string>08753C468C03ACB3EC831166470D22D0E2C1F832</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>158C46CB-21A1-436F-BE62-26EF0C4D0032</string>
+			<string>08753C468C03ACB3EC831166470D22D0E2C1F832</string>
 			<key>IDESourceControlWCCName</key>
 			<string>Half-iPad_20150422</string>
 		</dict>

@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "HSHomeViewController.h"
 
 @implementation AppDelegate
 
@@ -16,6 +17,13 @@
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
+    
+    HSHomeViewController *homeVC = [[HSHomeViewController alloc] init];
+    
+    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:homeVC];
+    navigationController.navigationBarHidden = YES;
+    self.window.rootViewController = navigationController;
+    
     return YES;
 }
 

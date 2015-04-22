@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		20458F6A1AE7BBC3003DCCA2 /* HSBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20458F691AE7BBC3003DCCA2 /* HSBaseViewController.m */; };
+		20458F6E1AE7BC46003DCCA2 /* SMGridView.m in Sources */ = {isa = PBXBuildFile; fileRef = 20458F6D1AE7BC46003DCCA2 /* SMGridView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		20458F711AE7BD5C003DCCA2 /* HSHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20458F701AE7BD5C003DCCA2 /* HSHomeViewController.m */; };
+		20713E521AE7CA08003CE5B8 /* HSBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 20713E511AE7CA08003CE5B8 /* HSBaseView.m */; };
 		20C404291AE76A6700187B01 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20C404281AE76A6700187B01 /* Foundation.framework */; };
 		20C4042B1AE76A6700187B01 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20C4042A1AE76A6700187B01 /* CoreGraphics.framework */; };
 		20C4042D1AE76A6700187B01 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20C4042C1AE76A6700187B01 /* UIKit.framework */; };
@@ -32,6 +36,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		20458F681AE7BBC3003DCCA2 /* HSBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSBaseViewController.h; sourceTree = "<group>"; };
+		20458F691AE7BBC3003DCCA2 /* HSBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSBaseViewController.m; sourceTree = "<group>"; };
+		20458F6C1AE7BC46003DCCA2 /* SMGridView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMGridView.h; sourceTree = "<group>"; };
+		20458F6D1AE7BC46003DCCA2 /* SMGridView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMGridView.m; sourceTree = "<group>"; };
+		20458F6F1AE7BD5C003DCCA2 /* HSHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSHomeViewController.h; sourceTree = "<group>"; };
+		20458F701AE7BD5C003DCCA2 /* HSHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSHomeViewController.m; sourceTree = "<group>"; };
+		20713E501AE7CA08003CE5B8 /* HSBaseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSBaseView.h; sourceTree = "<group>"; };
+		20713E511AE7CA08003CE5B8 /* HSBaseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSBaseView.m; sourceTree = "<group>"; };
 		20C404251AE76A6700187B01 /* Half.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Half.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		20C404281AE76A6700187B01 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		20C4042A1AE76A6700187B01 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -74,6 +86,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		20458F671AE7BB8D003DCCA2 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				20458F681AE7BBC3003DCCA2 /* HSBaseViewController.h */,
+				20458F691AE7BBC3003DCCA2 /* HSBaseViewController.m */,
+				20458F6F1AE7BD5C003DCCA2 /* HSHomeViewController.h */,
+				20458F701AE7BD5C003DCCA2 /* HSHomeViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		20458F6B1AE7BC46003DCCA2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				20458F6C1AE7BC46003DCCA2 /* SMGridView.h */,
+				20458F6D1AE7BC46003DCCA2 /* SMGridView.m */,
+				20713E501AE7CA08003CE5B8 /* HSBaseView.h */,
+				20713E511AE7CA08003CE5B8 /* HSBaseView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		20C4041C1AE76A6700187B01 = {
 			isa = PBXGroup;
 			children = (
@@ -107,6 +141,8 @@
 		20C4042E1AE76A6700187B01 /* Half */ = {
 			isa = PBXGroup;
 			children = (
+				20458F6B1AE7BC46003DCCA2 /* View */,
+				20458F671AE7BB8D003DCCA2 /* Controller */,
 				20C404371AE76A6700187B01 /* AppDelegate.h */,
 				20C404381AE76A6700187B01 /* AppDelegate.m */,
 				20C4043A1AE76A6700187B01 /* Images.xcassets */,
@@ -238,8 +274,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				20458F6E1AE7BC46003DCCA2 /* SMGridView.m in Sources */,
 				20C404391AE76A6700187B01 /* AppDelegate.m in Sources */,
+				20713E521AE7CA08003CE5B8 /* HSBaseView.m in Sources */,
 				20C404351AE76A6700187B01 /* main.m in Sources */,
+				20458F711AE7BD5C003DCCA2 /* HSHomeViewController.m in Sources */,
+				20458F6A1AE7BBC3003DCCA2 /* HSBaseViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -438,6 +478,7 @@
 				20C404531AE76A6800187B01 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		20C404541AE76A6800187B01 /* Build configuration list for PBXNativeTarget "HalfTests" */ = {
 			isa = XCConfigurationList;
@@ -446,6 +487,7 @@
 				20C404561AE76A6800187B01 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
