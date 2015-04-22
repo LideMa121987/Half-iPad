@@ -54,6 +54,8 @@
 
 - (void)viewControllerDidAdjustView
 {
+    [super viewControllerDidAdjustView];
+    
     _gridView.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
     _gridHeaderView.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.width * 9 / 16);
     

@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>3EADD7DC-CB93-4601-A741-D39605572506</string>
 	<key>IDESourceControlProjectName</key>
-	<string>project</string>
+	<string>Half</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>08753C468C03ACB3EC831166470D22D0E2C1F832</key>
 		<string>https://github.com/LideMa121987/Half-iPad.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>Half/Half.xcodeproj/project.xcworkspace</string>
+	<string>Half/Half.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>08753C468C03ACB3EC831166470D22D0E2C1F832</key>
