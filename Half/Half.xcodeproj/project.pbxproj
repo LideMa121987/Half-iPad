@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		04C7CB8B1AE9556C0028C9FB /* HSHomeGridView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C7CB8A1AE9556C0028C9FB /* HSHomeGridView.m */; };
+		04C7CB8E1AE95BDC0028C9FB /* HSDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C7CB8D1AE95BDC0028C9FB /* HSDetailViewController.m */; };
 		20458F6A1AE7BBC3003DCCA2 /* HSBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20458F691AE7BBC3003DCCA2 /* HSBaseViewController.m */; };
 		20458F6E1AE7BC46003DCCA2 /* SMGridView.m in Sources */ = {isa = PBXBuildFile; fileRef = 20458F6D1AE7BC46003DCCA2 /* SMGridView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		20458F711AE7BD5C003DCCA2 /* HSHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20458F701AE7BD5C003DCCA2 /* HSHomeViewController.m */; };
@@ -36,6 +38,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		04C7CB891AE9556C0028C9FB /* HSHomeGridView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSHomeGridView.h; sourceTree = "<group>"; };
+		04C7CB8A1AE9556C0028C9FB /* HSHomeGridView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSHomeGridView.m; sourceTree = "<group>"; };
+		04C7CB8C1AE95BDC0028C9FB /* HSDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSDetailViewController.h; sourceTree = "<group>"; };
+		04C7CB8D1AE95BDC0028C9FB /* HSDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSDetailViewController.m; sourceTree = "<group>"; };
 		20458F681AE7BBC3003DCCA2 /* HSBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSBaseViewController.h; sourceTree = "<group>"; };
 		20458F691AE7BBC3003DCCA2 /* HSBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSBaseViewController.m; sourceTree = "<group>"; };
 		20458F6C1AE7BC46003DCCA2 /* SMGridView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMGridView.h; sourceTree = "<group>"; };
@@ -93,6 +99,8 @@
 				20458F691AE7BBC3003DCCA2 /* HSBaseViewController.m */,
 				20458F6F1AE7BD5C003DCCA2 /* HSHomeViewController.h */,
 				20458F701AE7BD5C003DCCA2 /* HSHomeViewController.m */,
+				04C7CB8C1AE95BDC0028C9FB /* HSDetailViewController.h */,
+				04C7CB8D1AE95BDC0028C9FB /* HSDetailViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -104,6 +112,8 @@
 				20458F6D1AE7BC46003DCCA2 /* SMGridView.m */,
 				20713E501AE7CA08003CE5B8 /* HSBaseView.h */,
 				20713E511AE7CA08003CE5B8 /* HSBaseView.m */,
+				04C7CB891AE9556C0028C9FB /* HSHomeGridView.h */,
+				04C7CB8A1AE9556C0028C9FB /* HSHomeGridView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -274,12 +284,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04C7CB8E1AE95BDC0028C9FB /* HSDetailViewController.m in Sources */,
 				20458F6E1AE7BC46003DCCA2 /* SMGridView.m in Sources */,
 				20C404391AE76A6700187B01 /* AppDelegate.m in Sources */,
 				20713E521AE7CA08003CE5B8 /* HSBaseView.m in Sources */,
 				20C404351AE76A6700187B01 /* main.m in Sources */,
 				20458F711AE7BD5C003DCCA2 /* HSHomeViewController.m in Sources */,
 				20458F6A1AE7BBC3003DCCA2 /* HSBaseViewController.m in Sources */,
+				04C7CB8B1AE9556C0028C9FB /* HSHomeGridView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

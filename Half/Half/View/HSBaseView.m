@@ -2,7 +2,7 @@
 //  HSBaseView.m
 //  Half
 //
-//  Created by metao on 15/4/22.
+//  Created by lide on 15/4/22.
 //
 //
 
@@ -10,9 +10,9 @@
 
 @implementation HSBaseView
 
-- (id)init
+- (id)initWithFrame:(CGRect)frame
 {
-    self = [super init];
+    self = [super initWithFrame:frame];
     if(self != nil)
     {
         [[NSNotificationCenter defaultCenter] addObserver:self
@@ -31,6 +31,13 @@
     // Drawing code
 }
 */
+
+- (void)setFrame:(CGRect)frame
+{
+    [super setFrame:frame];
+    
+    [self viewDidAdjustSelf];
+}
 
 - (void)viewDidAdjustSelf
 {

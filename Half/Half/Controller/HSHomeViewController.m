@@ -2,15 +2,16 @@
 //  HSHomeViewController.m
 //  Half
 //
-//  Created by metao on 15/4/22.
+//  Created by lide on 15/4/22.
 //
 //
 
 #import "HSHomeViewController.h"
 #import "SMGridView.h"
-#import "HSBaseView.h"
+#import "HSHomeGridView.h"
+#import "HSDetailViewController.h"
 
-@interface HSHomeViewController () <SMGridViewDataSource, SMGridViewDelegate>
+@interface HSHomeViewController () <SMGridViewDataSource, SMGridViewDelegate, HSHomeGridViewDelegate>
 {
     SMGridView      *_gridView;
     UIView          *_gridHeaderView;
@@ -24,7 +25,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    _gridView = [[SMGridView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
+    _gridView = [[SMGridView alloc] initWithFrame:CGRectMake(0, _adjustView.frame.size.height, self.view.frame.size.width, self.view.frame.size.height - _adjustView.frame.size.height)];
     _gridView.padding = 15;
     _gridView.vertical = YES;
     _gridView.dataSource = self;
@@ -56,7 +57,7 @@
 {
     [super viewControllerDidAdjustView];
     
-    _gridView.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
+    _gridView.frame = CGRectMake(0, _adjustView.frame.size.height, self.view.frame.size.width, self.view.frame.size.height - _adjustView.frame.size.height);
     _gridHeaderView.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.width * 9 / 16);
     
     if(IsPortrait)
@@ -92,11 +93,20 @@
 
 - (UIView *)smGridView:(SMGridView *)gridView viewForIndexPath:(NSIndexPath *)indexPath
 {
-    UIView *view = [gridView dequeReusableView];
+    HSHomeGridView *view = (HSHomeGridView *)[gridView dequeReusableView];
     if(view == nil)
     {
-        view = [[HSBaseView alloc] init];
-        view.backgroundColor = [UIColor redColor];
+        if(IsPortrait)
+        {
+            CGSize size = CGSizeMake((gridView.frame.size.width - 15 * 3) / 2, (gridView.frame.size.width - 15 * 3) * 3 / 8);
+            view = [[HSHomeGridView alloc] initWithFrame:CGRectMake(0, 0, size.width, size.height)];
+        }
+        else
+        {
+            CGSize size = CGSizeMake((gridView.frame.size.width - 15 * 4) / 3, (gridView.frame.size.width - 15 * 4) / 4);
+            view = [[HSHomeGridView alloc] initWithFrame:CGRectMake(0, 0, size.width, size.height)];
+        }
+        view.delegate = self;
     }
     
     if(IsPortrait)
@@ -129,5 +139,15 @@
 }
 
 #pragma mark - SMGridViewDelegate
+
+#pragma mark - HSHomeGridViewDelegate
+
+- (void)homeGridViewDidTapContentView:(HSHomeGridView *)homeGridView
+{
+    NSLog(@"Fuck!");
+    
+    HSDetailViewController *detailVC = [[HSDetailViewController alloc] init];
+    [self.navigationController pushViewController:detailVC animated:NO];
+}
 
 @end
