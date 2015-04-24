@@ -1,14 +1,14 @@
 //
-//  HSDetailViewController.m
+//  HSSettingViewController.m
 //  Half
 //
-//  Created by Lide on 15/4/24.
+//  Created by Lide on 2015/04/24.
 //
 //
 
-#import "HSDetailViewController.h"
+#import "HSSettingViewController.h"
 
-@interface HSDetailViewController ()
+@interface HSSettingViewController ()
 {
     UIView      *_backgroundView;
     UIView      *_contentView;
@@ -16,7 +16,7 @@
 
 @end
 
-@implementation HSDetailViewController
+@implementation HSSettingViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -33,7 +33,7 @@
     UITapGestureRecognizer *oneFingerTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapBackgroundView:)];
     [_backgroundView addGestureRecognizer:oneFingerTap];
     
-    _contentView = [[UIView alloc] initWithFrame:CGRectMake(200, 0, self.view.frame.size.width - 200, self.view.frame.size.height)];
+    _contentView = [[UIView alloc] initWithFrame:CGRectMake(200, 200, self.view.frame.size.width - 200 * 2, self.view.frame.size.height - 200 * 2)];
     _contentView.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:_contentView];
     
@@ -58,7 +58,7 @@
 - (void)showAnimation
 {
     _backgroundView.alpha = 0;
-    _contentView.transform = CGAffineTransformMake(1, 0, 0, 1, _contentView.frame.size.width, 0);
+    _contentView.transform = CGAffineTransformMake(0, 0, 0, 0, 0, 0);
     
     [UIView animateWithDuration:0.35
                      animations:^{
@@ -77,7 +77,7 @@
                      animations:^{
                          
                          _backgroundView.alpha = 0;
-                         _contentView.transform = CGAffineTransformMake(1, 0, 0, 1, _contentView.frame.size.width, 0);
+                         _contentView.transform = CGAffineTransformMake(0, 0, 0, 0, 0, 0);
                          
                      } completion:^(BOOL finished) {
                          
@@ -91,7 +91,7 @@
     [super viewControllerDidAdjustView];
     
     _backgroundView.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
-    _contentView.frame = CGRectMake(200, 0, self.view.frame.size.width - 200, self.view.frame.size.height);
+    _contentView.frame = CGRectMake(200, 200, self.view.frame.size.width - 200 * 2, self.view.frame.size.height - 200 * 2);
 }
 
 #pragma mark - UIGestureRecognizer

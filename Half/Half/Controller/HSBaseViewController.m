@@ -73,6 +73,16 @@
 }
 */
 
+- (void)showAnimation
+{
+    
+}
+
+- (void)hideAnimation
+{
+
+}
+
 - (void)viewControllerDidAdjustView
 {
     self.view.frame = CGRectMake(self.view.frame.origin.x, self.view.frame.origin.y, ScreenWidth - self.view.frame.origin.x, ScreenHeight - self.view.frame.origin.y);

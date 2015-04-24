@@ -10,9 +10,12 @@
 #import "SMGridView.h"
 #import "HSHomeGridView.h"
 #import "HSDetailViewController.h"
+#import "HSSettingViewController.h"
 
 @interface HSHomeViewController () <SMGridViewDataSource, SMGridViewDelegate, HSHomeGridViewDelegate>
 {
+    UIButton        *_settingButton;
+    
     SMGridView      *_gridView;
     UIView          *_gridHeaderView;
 }
@@ -21,9 +24,25 @@
 
 @implementation HSHomeViewController
 
+#pragma mark - private
+
+- (void)clickSettingButton:(id)sender
+{
+    HSSettingViewController *settingVC = [[HSSettingViewController alloc] init];
+    [self.navigationController pushViewController:settingVC animated:NO];
+}
+
+#pragma mark - super
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    _settingButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    _settingButton.frame = CGRectMake(_headView.frame.size.width - 40 - 2, 2, 40, 40);
+    _settingButton.backgroundColor = [UIColor redColor];
+    [_settingButton addTarget:self action:@selector(clickSettingButton:) forControlEvents:UIControlEventTouchUpInside];
+    [_headView addSubview:_settingButton];
     
     _gridView = [[SMGridView alloc] initWithFrame:CGRectMake(0, _adjustView.frame.size.height, self.view.frame.size.width, self.view.frame.size.height - _adjustView.frame.size.height)];
     _gridView.padding = 15;
@@ -56,6 +75,8 @@
 - (void)viewControllerDidAdjustView
 {
     [super viewControllerDidAdjustView];
+    
+    _settingButton.frame = CGRectMake(_headView.frame.size.width - 40 - 2, 2, 40, 40);
     
     _gridView.frame = CGRectMake(0, _adjustView.frame.size.height, self.view.frame.size.width, self.view.frame.size.height - _adjustView.frame.size.height);
     _gridHeaderView.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.width * 9 / 16);

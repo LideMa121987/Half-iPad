@@ -16,6 +16,9 @@
     UIImageView     *_parentImageView;
 }
 
+- (void)showAnimation;
+- (void)hideAnimation;
+
 - (void)viewControllerDidAdjustView;
 
 @end
