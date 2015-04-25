@@ -41,8 +41,8 @@
 
 - (void)viewDidAdjustSelf
 {
-    NSLog(@"Fuck!");
-    NSLog(@"%@", NSStringFromCGRect(CGRectMake(0, 0, self.frame.size.width, self.frame.size.height)));
+//    NSLog(@"Fuck!");
+//    NSLog(@"%@", NSStringFromCGRect(CGRectMake(0, 0, self.frame.size.width, self.frame.size.height)));
 }
 
 @end

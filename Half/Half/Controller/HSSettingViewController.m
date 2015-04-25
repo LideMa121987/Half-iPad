@@ -7,11 +7,14 @@
 //
 
 #import "HSSettingViewController.h"
+#import "HSSettingHomeViewController.h"
 
 @interface HSSettingViewController ()
 {
     UIView      *_backgroundView;
     UIView      *_contentView;
+    
+    UINavigationController  *_navigationController;
 }
 
 @end
@@ -36,6 +39,12 @@
     _contentView = [[UIView alloc] initWithFrame:CGRectMake(200, 200, self.view.frame.size.width - 200 * 2, self.view.frame.size.height - 200 * 2)];
     _contentView.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:_contentView];
+    
+    HSSettingHomeViewController *settingHomeVC = [[HSSettingHomeViewController alloc] init];
+    _navigationController = [[UINavigationController alloc] initWithRootViewController:settingHomeVC];
+    _navigationController.navigationBarHidden = YES;
+    _navigationController.view.frame = CGRectMake(0, 0, _contentView.frame.size.width, _contentView.frame.size.height);
+    [_contentView addSubview:_navigationController.view];
     
     [self showAnimation];
 }
@@ -92,6 +101,8 @@
     
     _backgroundView.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
     _contentView.frame = CGRectMake(200, 200, self.view.frame.size.width - 200 * 2, self.view.frame.size.height - 200 * 2);
+    
+    _navigationController.view.frame = CGRectMake(0, 0, _contentView.frame.size.width, _contentView.frame.size.height);
 }
 
 #pragma mark - UIGestureRecognizer

@@ -104,10 +104,17 @@
 
 - (void)viewControllerDidAdjustView
 {
-    self.view.frame = CGRectMake(self.view.frame.origin.x, self.view.frame.origin.y, ScreenWidth - self.view.frame.origin.x, ScreenHeight - self.view.frame.origin.y);
+    if(self.navigationController != nil)
+    {
+        self.view.frame = CGRectMake(self.view.frame.origin.x, self.view.frame.origin.y, self.navigationController.view.frame.size.width, self.navigationController.view.frame.size.height);
+    }
+    else
+    {
+        self.view.frame = CGRectMake(self.view.frame.origin.x, self.view.frame.origin.y, ScreenWidth - self.view.frame.origin.x, ScreenHeight - self.view.frame.origin.y);
+    }
     
-    NSLog(@"Fuck!");
-    NSLog(@"%@", NSStringFromCGRect(self.view.frame));
+//    NSLog(@"Fuck!");
+//    NSLog(@"%@", NSStringFromCGRect(self.view.frame));
     
     _adjustView.frame = CGRectMake(0, self.view.frame.origin.y, self.view.frame.size.width, 64 - self.view.frame.origin.y);
     _headView.frame = CGRectMake(0, _adjustView.frame.size.height - 44, _adjustView.frame.size.width, 44);
