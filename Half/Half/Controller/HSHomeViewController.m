@@ -11,10 +11,12 @@
 #import "HSHomeGridView.h"
 #import "HSDetailViewController.h"
 #import "HSSettingViewController.h"
+#import "HSUserViewController.h"
 
 @interface HSHomeViewController () <SMGridViewDataSource, SMGridViewDelegate, HSHomeGridViewDelegate>
 {
     UIButton        *_settingButton;
+    UIButton        *_userButton;
     
     SMGridView      *_gridView;
     UIView          *_gridHeaderView;
@@ -32,17 +34,33 @@
     [self.navigationController pushViewController:settingVC animated:NO];
 }
 
+- (void)clickUserButton:(id)sender
+{
+    HSUserViewController *userVC = [[HSUserViewController alloc] init];
+    [self.navigationController pushViewController:userVC animated:YES];
+}
+
 #pragma mark - super
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    _backButton.hidden = YES;
+    
     _settingButton = [UIButton buttonWithType:UIButtonTypeCustom];
     _settingButton.frame = CGRectMake(_headView.frame.size.width - 40 - 2, 2, 40, 40);
     _settingButton.backgroundColor = [UIColor redColor];
     [_settingButton addTarget:self action:@selector(clickSettingButton:) forControlEvents:UIControlEventTouchUpInside];
     [_headView addSubview:_settingButton];
+    
+    _userButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    _userButton.frame = CGRectMake(_settingButton.frame.origin.x - 10 - 40, _settingButton.frame.origin.y, 40, 40);
+    _userButton.backgroundColor = [UIColor greenColor];
+    [_userButton setTitle:@"U" forState:UIControlStateNormal];
+    [_userButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [_userButton addTarget:self action:@selector(clickUserButton:) forControlEvents:UIControlEventTouchUpInside];
+    [_headView addSubview:_userButton];
     
     _gridView = [[SMGridView alloc] initWithFrame:CGRectMake(0, _adjustView.frame.size.height, self.view.frame.size.width, self.view.frame.size.height - _adjustView.frame.size.height)];
     _gridView.padding = 15;
@@ -77,6 +95,7 @@
     [super viewControllerDidAdjustView];
     
     _settingButton.frame = CGRectMake(_headView.frame.size.width - 40 - 2, 2, 40, 40);
+    _userButton.frame = CGRectMake(_settingButton.frame.origin.x - 10 - 40, _settingButton.frame.origin.y, 40, 40);
     
     _gridView.frame = CGRectMake(0, _adjustView.frame.size.height, self.view.frame.size.width, self.view.frame.size.height - _adjustView.frame.size.height);
     _gridHeaderView.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.width * 9 / 16);

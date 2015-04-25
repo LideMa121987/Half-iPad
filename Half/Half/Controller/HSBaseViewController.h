@@ -12,6 +12,7 @@
 {
     UIView      *_adjustView;
     UIView      *_headView;
+    UIButton    *_backButton;
     
     UIImageView     *_parentImageView;
 }

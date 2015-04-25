@@ -17,9 +17,20 @@
 
 @implementation HSBaseViewController
 
+#pragma mark - private
+
+- (void)clickBackButton:(id)sender
+{
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
+#pragma mark - super
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    self.view.backgroundColor = [UIColor whiteColor];
     
     _adjustView = [[UIView alloc] initWithFrame:CGRectMake(0, self.view.frame.origin.y, self.view.frame.size.width, 64 - self.view.frame.origin.y)];
     _adjustView.backgroundColor = [UIColor clearColor];
@@ -28,6 +39,14 @@
     _headView = [[UIView alloc] initWithFrame:CGRectMake(0, _adjustView.frame.size.height - 44, _adjustView.frame.size.width, 44)];
     _headView.backgroundColor = [UIColor blackColor];
     [_adjustView addSubview:_headView];
+    
+    _backButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    _backButton.frame = CGRectMake(2, 2, 40, 40);
+    _backButton.backgroundColor = [UIColor cyanColor];
+    [_backButton setTitle:@"B" forState:UIControlStateNormal];
+    [_backButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [_backButton addTarget:self action:@selector(clickBackButton:) forControlEvents:UIControlEventTouchUpInside];
+    [_headView addSubview:_backButton];
     
     _parentImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
     _parentImageView.backgroundColor = [UIColor clearColor];
@@ -92,6 +111,7 @@
     
     _adjustView.frame = CGRectMake(0, self.view.frame.origin.y, self.view.frame.size.width, 64 - self.view.frame.origin.y);
     _headView.frame = CGRectMake(0, _adjustView.frame.size.height - 44, _adjustView.frame.size.width, 44);
+    _backButton.frame = CGRectMake(2, 2, 40, 40);
     
     _parentImageView.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
     if(self.navigationController != nil && self.navigationController.viewControllers && [self.navigationController.viewControllers indexOfObject:self] > 0)

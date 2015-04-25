@@ -58,7 +58,7 @@
 - (void)showAnimation
 {
     _backgroundView.alpha = 0;
-    _contentView.transform = CGAffineTransformMake(0, 0, 0, 0, 0, 0);
+    _contentView.transform = CGAffineTransformMake(0.1, 0, 0, 0.1, 0, 0);
     
     [UIView animateWithDuration:0.35
                      animations:^{
@@ -77,7 +77,7 @@
                      animations:^{
                          
                          _backgroundView.alpha = 0;
-                         _contentView.transform = CGAffineTransformMake(0, 0, 0, 0, 0, 0);
+                         _contentView.transform = CGAffineTransformMake(0.1, 0, 0, 0.1, 0, 0);
                          
                      } completion:^(BOOL finished) {
                          
